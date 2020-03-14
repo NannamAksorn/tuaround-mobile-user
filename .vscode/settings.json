@@ -2,5 +2,8 @@
     "eslint.autoFixOnSave": true,
     "eslint.alwaysShowStatus": true,
     "eslint.lintTask.enable": true,
-    "workbench.editor.centeredLayoutAutoResize": false
+    "workbench.editor.centeredLayoutAutoResize": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }
