@@ -1,8 +1,11 @@
 import { Navigation } from 'react-native-navigation';
+import { Provider } from 'react-redux';
+import store from '../redux';
+
 import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 
 export default function registerScreens() {
-  Navigation.registerComponent('LoginScreen', () => LoginScreen);
-  Navigation.registerComponent('HomeScreen', () => HomeScreen);
+  Navigation.registerComponentWithRedux('LoginScreen', () => LoginScreen, Provider, store);
+  Navigation.registerComponentWithRedux('HomeScreen', () => HomeScreen, Provider, store);
 }

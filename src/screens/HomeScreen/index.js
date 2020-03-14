@@ -1,10 +1,19 @@
 // HomeScreen
 import React from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
 
-const index = () => (
+const mapStateToProps = ({ user }) => ({
+  formUsername: user.formUsername,
+  formPassword: user.formPassword,
+});
+
+const index = ({ formPassword, formUsername }) => (
   <View>
-    <Text>Hi</Text>
+    <Text>HomeScreen</Text>
+    <Text>{formUsername}</Text>
+    <Text>{formPassword}</Text>
   </View>
 );
-export default index;
+
+export default connect(mapStateToProps)(index);
